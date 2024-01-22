@@ -4,7 +4,11 @@
  * @return {number[]}
  */
 var filter = function(arr, fn) {
-    return arr.filter((n,index) => {
-        return Boolean(fn(n,index))
-    } , true)
+    let ans = [];
+    
+    for(let i=0; i<arr.length; i++){
+        if(Boolean(fn(arr[i],i)) === true)
+            ans.push(arr[i]);
+    }
+    return ans;
 };
