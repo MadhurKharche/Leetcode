@@ -4,8 +4,8 @@
  * @return {Promise}
  */
 var addTwoPromises = async function(promise1, promise2) {
-    let temp = await promise1 + await promise2;
-    return temp;
+    return await promise1 + await promise2;
+    // return temp;
 };
 
 /**
