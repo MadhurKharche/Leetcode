@@ -6,14 +6,10 @@ function memoize(fn) {
     var obj = {}
     
     return function(...args) {
-        if(args in obj){
-            return obj[args];
+        if(!(args in obj)){
+            obj[args] = fn(...args);
         }
-        else{
-            let temp = fn(...args);
-            obj[args] = temp;
-            return temp;
-        }
+        return obj[args];
     }
 }
 
